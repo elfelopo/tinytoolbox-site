@@ -1,0 +1,130 @@
+:root
+{
+    --mint-main: #B8E6D0;
+    --mint-light: #DDF5E9;
+    --mint-dark: #88C7AE;
+
+    --text-dark: #315548;
+
+    --card-shadow: rgba(0,0,0,0.08);
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    margin: 0;
+
+    background: var(--mint-main);
+
+    font-family: "Nunito", sans-serif;
+
+    color: var(--text-dark);
+
+    padding: 40px 20px;
+}
+
+header
+{
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+h1
+{
+    font-family: "Press Start 2P", cursive;
+
+    color: white;
+
+    font-size: clamp(1.5rem, 4vw, 3rem);
+
+    line-height: 1.5;
+
+    text-shadow:
+        3px 3px 0 rgba(0,0,0,0.12);
+}
+
+.subtitle
+{
+    font-size: 1.2rem;
+
+    font-weight: 700;
+}
+
+.intro
+{
+    max-width: 800px;
+
+    margin: 0 auto 50px auto;
+
+    background: var(--mint-light);
+
+    padding: 25px;
+
+    border-radius: 20px;
+}
+
+section
+{
+    max-width: 1000px;
+
+    margin: auto auto 50px auto;
+}
+
+h2
+{
+    font-family: "Press Start 2P", cursive;
+
+    color: white;
+
+    font-size: 1rem;
+
+    margin-bottom: 25px;
+}
+
+.tool-grid
+{
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.tool-card
+{
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 8px 20px var(--card-shadow);
+
+    transition: transform 0.2s;
+}
+
+.tool-card:hover
+{
+    transform: translateY(-4px);
+}
+
+.tool-card h3
+{
+    margin-top: 0;
+}
+
+footer
+{
+    text-align: center;
+
+    margin-top: 60px;
+
+    opacity: 0.7;
+}
