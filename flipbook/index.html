@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Tiny Flipbook Maker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Tiny Flipbook Maker</h1>
+
+    <input type="file" id="imageInput" accept="image/png" multiple>
+
+    <p id="frameCount">Frames: 0</p>
+
+    <label>
+        Columns:
+        <input type="number" id="columnsInput" value="4" min="1">
+    </label>
+
+    <br><br>
+
+    <button id="createButton">
+        CREATE SPRITESHEET
+    </button>
+
+    <br><br>
+
+    <canvas id="previewCanvas"></canvas>
+
+    <br><br>
+
+    <button id="downloadButton" disabled>
+        DOWNLOAD PNG
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
