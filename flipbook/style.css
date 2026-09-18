@@ -3,8 +3,25 @@ body {
     margin: 40px;
 }
 
+.workspace {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.controls {
+    min-width: 0;
+}
+
+.preview-area {
+    max-width: 100%;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+}
+
 canvas {
-    max-width: 600px;
+    max-width: 100%;
     border: 1px solid black;
     image-rendering: pixelated;
 }
@@ -16,4 +33,14 @@ button {
 
 input {
     padding: 5px;
+}
+
+@media (max-width: 800px) {
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-area {
+        max-height: none;
+    }
 }
