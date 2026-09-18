@@ -398,27 +398,19 @@ nav a:hover {
    ===================================================== */
 
 .tool-icon {
-
-    width: 90px;
-
-    height: 70px;
-
+    height: 110px;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
+    margin-bottom: 12px;
+}
 
-    font-size: 3rem;
-
-    margin-bottom: 8px;
-
-    filter:
-        drop-shadow(
-            3px 3px 0
-            rgba(0,0,0,0.12)
-        );
-
+.tool-icon img {
+    max-width: 110px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    image-rendering: pixelated;
 }
 
 
