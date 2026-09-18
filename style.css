@@ -70,64 +70,6 @@ body {
    TOP BAR
    ===================================================== */
 
-.top-bar {
-
-    min-height: 70px;
-
-    padding:
-        12px
-        clamp(18px, 5vw, 70px);
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 30px;
-
-    background: #151b34;
-
-    border-bottom:
-        4px solid
-        var(--wood);
-
-    box-shadow:
-        0 4px 0 rgba(0, 0, 0, 0.25);
-
-}
-
-
-.top-logo {
-
-    font-family: "Press Start 2P", monospace;
-
-    font-size: 0.8rem;
-
-    white-space: nowrap;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-}
-
-
-.tiny-icon {
-    font-size: 1.5rem;
-}
-
-
-.top-tagline {
-
-    flex: 1;
-
-    color: #d9d2bd;
-
-    font-size: 1rem;
-
-}
-
 
 nav {
 
