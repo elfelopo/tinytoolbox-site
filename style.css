@@ -1,130 +1,813 @@
-:root
-{
-    --mint-main: #B8E6D0;
-    --mint-light: #DDF5E9;
-    --mint-dark: #88C7AE;
+/* =====================================================
+   TINYTOOLBOX
+   Main Website
+   ===================================================== */
 
-    --text-dark: #315548;
 
-    --card-shadow: rgba(0,0,0,0.08);
+:root {
+
+    --background: #171d38;
+    --background-light: #222a4a;
+
+    --wood-dark: #51362f;
+    --wood: #785044;
+    --wood-light: #a66d4e;
+
+    --cream: #fff4dc;
+    --cream-dark: #ead9c0;
+
+    --text: #243252;
+    --text-light: #f8f0df;
+
+    --blue: #7284c0;
+    --blue-dark: #56699f;
+
+    --green: #54b887;
+    --green-dark: #398e68;
+
+    --purple: #9b7bd1;
+
+    --shadow:
+        0 8px 0 rgba(0, 0, 0, 0.20);
+
 }
 
-*
-{
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
     box-sizing: border-box;
 }
 
-body
-{
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
     margin: 0;
 
-    background: var(--mint-main);
+    background:
+        linear-gradient(
+            rgba(20, 25, 52, 0.96),
+            rgba(20, 25, 52, 0.96)
+        );
+
+    color: var(--text-light);
 
     font-family: "Nunito", sans-serif;
 
-    color: var(--text-dark);
+    min-height: 100vh;
 
-    padding: 40px 20px;
 }
 
-header
-{
-    text-align: center;
 
-    margin-bottom: 50px;
+/* =====================================================
+   TOP BAR
+   ===================================================== */
+
+.top-bar {
+
+    min-height: 70px;
+
+    padding:
+        12px
+        clamp(18px, 5vw, 70px);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: #151b34;
+
+    border-bottom:
+        4px solid
+        var(--wood);
+
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.25);
+
 }
 
-h1
-{
-    font-family: "Press Start 2P", cursive;
 
-    color: white;
+.top-logo {
 
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-family: "Press Start 2P", monospace;
 
-    line-height: 1.5;
+    font-size: 0.8rem;
 
-    text-shadow:
-        3px 3px 0 rgba(0,0,0,0.12);
+    white-space: nowrap;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
 }
 
-.subtitle
-{
-    font-size: 1.2rem;
 
-    font-weight: 700;
+.tiny-icon {
+    font-size: 1.5rem;
 }
 
-.intro
-{
-    max-width: 800px;
 
-    margin: 0 auto 50px auto;
+.top-tagline {
 
-    background: var(--mint-light);
+    flex: 1;
 
-    padding: 25px;
-
-    border-radius: 20px;
-}
-
-section
-{
-    max-width: 1000px;
-
-    margin: auto auto 50px auto;
-}
-
-h2
-{
-    font-family: "Press Start 2P", cursive;
-
-    color: white;
+    color: #d9d2bd;
 
     font-size: 1rem;
 
-    margin-bottom: 25px;
 }
 
-.tool-grid
-{
+
+nav {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+nav a {
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition:
+        color 0.2s,
+        transform 0.2s;
+
+}
+
+
+nav a:hover {
+
+    color: #8de2c0;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+
+    position: relative;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    min-height: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(20, 25, 52, 0.8),
+            rgba(29, 36, 69, 0.45),
+            rgba(20, 25, 52, 0.8)
+        );
+
+    border-bottom:
+        6px solid
+        var(--wood);
+
+}
+
+
+.hero-content {
+
+    max-width: 850px;
+
+}
+
+
+.main-logo {
+
+    width: min(760px, 90vw);
+
+    max-height: 320px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto;
+
+    image-rendering: pixelated;
+
+}
+
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin:
+        -20px auto 0;
+
+    font-size: 1.15rem;
+
+    line-height: 1.6;
+
+    color: #ddd8c9;
+
+}
+
+
+.hero-decoration {
+
+    position: absolute;
+
+    font-size: 5rem;
+
+    opacity: 0.75;
+
+    filter:
+        drop-shadow(
+            4px 5px 0 rgba(0,0,0,0.3)
+        );
+
+}
+
+
+.hero-decoration.left {
+
+    left: 4%;
+
+    bottom: 35px;
+
+}
+
+
+.hero-decoration.right {
+
+    right: 4%;
+
+    bottom: 30px;
+
+}
+
+
+/* =====================================================
+   TOOLS SECTION
+   ===================================================== */
+
+.tools-section {
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding:
+        45px
+        25px
+        70px;
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.section-title h2 {
+
+    margin: 0;
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size: 1rem;
+
+    white-space: nowrap;
+
+}
+
+
+.sparkle {
+
+    color: #65d6ff;
+
+    font-size: 1.6rem;
+
+}
+
+
+.diamond {
+
+    color: #ffd58a;
+
+    font-size: 1.4rem;
+
+}
+
+
+.title-line {
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #66749c,
+            transparent
+        );
+
+    flex: 1;
+
+}
+
+
+/* =====================================================
+   TOOL GRID
+   ===================================================== */
+
+.tool-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+        repeat(4, 1fr);
 
-    gap: 20px;
+    gap: 22px;
+
 }
 
-.tool-card
-{
-    background: white;
 
-    border-radius: 20px;
+/* =====================================================
+   TOOL CARDS
+   ===================================================== */
 
-    padding: 20px;
+.tool-card {
 
-    box-shadow:
-        0 8px 20px var(--card-shadow);
+    min-height: 270px;
 
-    transition: transform 0.2s;
-}
+    padding: 25px 20px;
 
-.tool-card:hover
-{
-    transform: translateY(-4px);
-}
-
-.tool-card h3
-{
-    margin-top: 0;
-}
-
-footer
-{
     text-align: center;
 
-    margin-top: 60px;
+    display: flex;
 
-    opacity: 0.7;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8e9,
+            #e9dfd1
+        );
+
+    color: var(--text);
+
+    border:
+        4px solid
+        #9b9bb0;
+
+    border-radius: 14px;
+
+    box-shadow:
+        var(--shadow);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+.tool-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 14px 0 rgba(0,0,0,0.22);
+
+}
+
+
+/* ACTIVE TOOL */
+
+.tool-card.active {
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 8px 0
+        rgba(31, 104, 75, 0.35);
+
+}
+
+
+.tool-card.active:hover {
+
+    box-shadow:
+        0 14px 0
+        rgba(31, 104, 75, 0.35);
+
+}
+
+
+/* =====================================================
+   TOOL ICON
+   ===================================================== */
+
+.tool-icon {
+
+    width: 90px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 3rem;
+
+    margin-bottom: 8px;
+
+    filter:
+        drop-shadow(
+            3px 3px 0
+            rgba(0,0,0,0.12)
+        );
+
+}
+
+
+.tool-card h3 {
+
+    margin:
+        5px 0
+        8px;
+
+    font-size: 1.25rem;
+
+    line-height: 1.2;
+
+}
+
+
+.tool-card p {
+
+    margin:
+        0 0
+        15px;
+
+    max-width: 220px;
+
+    line-height: 1.35;
+
+    font-size: 0.95rem;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.tool-button,
+.coming-soon {
+
+    display: inline-block;
+
+    min-width: 150px;
+
+    padding:
+        11px
+        18px;
+
+    border-radius: 8px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+}
+
+
+.tool-button {
+
+    background:
+        var(--green);
+
+    color: white;
+
+    box-shadow:
+        0 4px 0
+        var(--green-dark);
+
+    transition:
+        transform 0.15s,
+        background 0.15s;
+
+}
+
+
+.tool-button:hover {
+
+    background:
+        #68c99b;
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.tool-button:active {
+
+    transform:
+        translateY(2px);
+
+    box-shadow:
+        0 2px 0
+        var(--green-dark);
+
+}
+
+
+.coming-soon {
+
+    background:
+        #8792b8;
+
+    color:
+        #f2f0eb;
+
+    opacity:
+        0.85;
+
+}
+
+
+/* FUTURE CARD */
+
+.tool-card.future {
+
+    opacity: 0.9;
+
+}
+
+
+.tool-card.future .tool-icon {
+
+    border:
+        3px dashed
+        #8891ae;
+
+    width: 65px;
+
+    height: 65px;
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    color:
+        #75809f;
+
+    font-size: 1.4rem;
+
+}
+
+
+/* =====================================================
+   ABOUT
+   ===================================================== */
+
+.about {
+
+    max-width: 700px;
+
+    margin:
+        0 auto 70px;
+
+    padding:
+        35px 25px;
+
+    text-align: center;
+
+    border-top:
+        3px solid
+        #536083;
+
+    border-bottom:
+        3px solid
+        #536083;
+
+}
+
+
+.about h2 {
+
+    font-family:
+        "Press Start 2P",
+        monospace;
+
+    font-size:
+        0.9rem;
+
+    color:
+        #8de2c0;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.about p {
+
+    color:
+        #c8c7c0;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+
+    text-align:
+        center;
+
+    padding:
+        25px;
+
+    color:
+        #9edfc5;
+
+    font-weight:
+        700;
+
+}
+
+
+footer span {
+
+    margin:
+        0 15px;
+
+    color:
+        #68749a;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1050px) {
+
+    .tool-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .top-bar {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        text-align: center;
+
+    }
+
+    .top-tagline {
+
+        flex-basis: 100%;
+
+        order: 3;
+
+    }
+
+    .hero {
+
+        min-height: 320px;
+
+    }
+
+    .hero-decoration {
+
+        display: none;
+
+    }
+
+    .hero-description {
+
+        font-size: 1rem;
+
+    }
+
+    .section-title {
+
+        flex-wrap: wrap;
+
+    }
+
+    .title-line {
+
+        min-width: 40px;
+
+    }
+
+    .tool-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .tool-card {
+
+        min-height: 250px;
+
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .top-logo {
+
+        font-size: 0.65rem;
+
+    }
+
+    .section-title h2 {
+
+        font-size: 0.75rem;
+
+    }
+
+    .tools-section {
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+    }
+
 }
