@@ -1,94 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tiny Toolbox</title>
+    <title>TinyToolbox — Small tools for big ideas</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-    <header>
-        <h1>Tiny Toolbox</h1>
+    <!-- TOP BAR -->
 
-        <p class="subtitle">
-            Free tools built with care.
-        </p>
+    <header class="top-bar">
+
+        <div class="top-logo">
+            <span class="tiny-icon">🧰</span>
+            <span>TinyToolbox</span>
+        </div>
+
+        <div class="top-tagline">
+            ✦ Small tools for big ideas ✦
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+        </nav>
+
     </header>
 
-    <section class="intro">
-        <p>
-            Hi! I'm Felipe, a game developer and VFX artist.
-        </p>
 
-        <p>
-            This is my collection of free online tools for creators,
-            developers, and anyone who needs to get things done.
-        </p>
-        <p><strong>
-            [ Tiny Toolbox is currently under construction ]
-        </strong></p>
-        <p><strong>
-            [ More tools coming soon ]
-        </strong></p>
-    </section>
+    <!-- HERO -->
 
-    <section>
-        <h2>General Tools</h2>
+    <main id="home">
 
-        <div class="tool-grid">
+        <section class="hero">
 
-            <div class="tool-card">
-                <h3>PNG → PDF</h3>
-                <p>Coming Soon</p>
+            <div class="hero-decoration left">
+                🐈
             </div>
 
-            <div class="tool-card">
-                <h3>QR Generator</h3>
-                <p>Coming Soon</p>
+            <div class="hero-content">
+
+                <img
+                    src="images/tinytoolbox-logo.png"
+                    alt="TinyToolbox — Small tools for big ideas"
+                    class="main-logo"
+                >
+
+                <p class="hero-description">
+                    Simple, offline-friendly utilities for VFX,
+                    game development and creative work.
+                </p>
+
             </div>
 
-            <div class="tool-card">
-                <h3>Image Resizer</h3>
-                <p>Coming Soon</p>
+            <div class="hero-decoration right">
+                🧙
             </div>
 
-        </div>
-    </section>
+        </section>
 
-    <section>
-        <h2>Developer Tools</h2>
 
-        <div class="tool-grid">
+        <!-- TOOLS -->
 
-            <div class="tool-card">
-                <h3>Sprite Sheet Builder</h3>
-                <p>Coming Soon</p>
+        <section class="tools-section">
+
+            <div class="section-title">
+
+                <span class="sparkle">✦</span>
+
+                <h2>Available Tools</h2>
+
+                <div class="title-line"></div>
+
+                <span class="diamond">✦</span>
+
+                <div class="title-line"></div>
+
             </div>
 
-            <div class="tool-card">
-                <h3>Normal Map Generator</h3>
-                <p>Coming Soon</p>
+
+            <div class="tool-grid">
+
+
+                <!-- FLIPBOOK MAKER -->
+
+                <article class="tool-card active">
+
+                    <div class="tool-icon">
+                        🔥
+                    </div>
+
+                    <h3>Flipbook Maker</h3>
+
+                    <p>
+                        Turn your PNG frames
+                        into a spritesheet.
+                    </p>
+
+                    <a class="tool-button" href="flipbook/">
+                        Open Tool →
+                    </a>
+
+                </article>
+
+
+                <!-- SPRITESHEET SPLITTER -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon">
+                        🟩
+                    </div>
+
+                    <h3>Spritesheet Splitter</h3>
+
+                    <p>
+                        Split your spritesheet
+                        into individual frames.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon...
+                    </span>
+
+                </article>
+
+
+                <!-- PARTICLE PREVIEW -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon">
+                        💥
+                    </div>
+
+                    <h3>Particle Preview</h3>
+
+                    <p>
+                        Quickly preview your
+                        VFX particle textures.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon...
+                    </span>
+
+                </article>
+
+
+                <!-- PALETTE EXTRACTOR -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon">
+                        🎨
+                    </div>
+
+                    <h3>Palette Extractor</h3>
+
+                    <p>
+                        Get the color palette
+                        from any image.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon...
+                    </span>
+
+                </article>
+
+
+                <!-- IMAGE RESIZER -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon">
+                        🖼️
+                    </div>
+
+                    <h3>Image Resizer</h3>
+
+                    <p>
+                        Resize your images
+                        quickly and easily.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon...
+                    </span>
+
+                </article>
+
+
+                <!-- COLOR PALETTE -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon">
+                        🌈
+                    </div>
+
+                    <h3>Color Palette Generator</h3>
+
+                    <p>
+                        Create beautiful
+                        color palettes.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon...
+                    </span>
+
+                </article>
+
+
+                <!-- TEXTURE CONVERTER -->
+
+                <article class="tool-card">
+
+                    <div class="tool-icon">
+                        📄
+                    </div>
+
+                    <h3>GFX Texture Converter</h3>
+
+                    <p>
+                        Convert between
+                        image formats.
+                    </p>
+
+                    <span class="coming-soon">
+                        Coming Soon...
+                    </span>
+
+                </article>
+
+
+                <!-- FUTURE -->
+
+                <article class="tool-card future">
+
+                    <div class="tool-icon">
+                        ?
+                    </div>
+
+                    <h3>Coming Soon...</h3>
+
+                    <p>
+                        More tiny tools
+                        are on the way!
+                    </p>
+
+                    <span class="coming-soon">
+                        Stay tuned
+                    </span>
+
+                </article>
+
             </div>
 
-            <div class="tool-card">
-                <h3>JSON Formatter</h3>
-                <p>Coming Soon</p>
-            </div>
+        </section>
 
-        </div>
-    </section>
+
+        <!-- ABOUT -->
+
+        <section class="about" id="about">
+
+            <h2>Small tools = Big ideas ♥</h2>
+
+            <p>
+                TinyToolbox is a collection of small,
+                practical tools made for creators.
+            </p>
+
+            <p>
+                Built with a particular love for
+                VFX, game development and making
+                annoying little tasks easier.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
 
     <footer>
-        <p>Made with ❤️ by Felipe</p>
+
+        <span>—</span>
+
+        Made with ♥ for creators
+
+        <span>—</span>
+
     </footer>
 
 </body>
+
 </html>
