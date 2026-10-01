@@ -1,0 +1,435 @@
+
+/* =========================================================
+   TinyToolbox — Mint Pixel / VFX Wizard theme
+   Visual redesign only: existing HTML + tool functionality
+   are intentionally kept compatible.
+   ========================================================= */
+
+:root {
+  --mint-50: #f4fffb;
+  --mint-100: #e7faf3;
+  --mint-200: #ccefe3;
+  --mint-300: #a9dfcf;
+  --mint-400: #72c7ae;
+  --mint-500: #48ad91;
+  --mint-600: #2f8e76;
+  --mint-700: #246e5d;
+
+  --ink: #17352f;
+  --ink-soft: #42645c;
+  --white: #ffffff;
+
+  --card: #ffffff;
+  --card-border: #b9ded1;
+
+  --gold: #d5a94a;
+  --gold-dark: #9d7524;
+
+  --shadow: rgba(31, 91, 75, 0.16);
+  --shadow-strong: rgba(31, 91, 75, 0.25);
+}
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% -10%, #ffffff 0%, var(--mint-50) 42%, var(--mint-100) 100%);
+  color: var(--ink);
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(231, 250, 243, 0.94) 72%,
+      rgba(204, 239, 227, 0.98) 100%
+    );
+
+  border-bottom: 6px solid var(--mint-600);
+  box-shadow: 0 8px 0 rgba(36, 110, 93, 0.08);
+}
+
+/* Subtle pixel-like background texture */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(72, 173, 145, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(72, 173, 145, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(72, 173, 145, 0) 0%,
+      rgba(72, 173, 145, 0.10) 100%
+    );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1400px, 100%);
+  min-height: 390px;
+  padding: 24px 28px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  The HTML already uses .main-logo for the hero artwork.
+  Keep that class so no HTML rewrite is required.
+*/
+.main-logo {
+  display: block;
+  width: min(900px, 92vw);
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 10px 0 rgba(36, 110, 93, 0.08));
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.main-logo:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 13px 0 rgba(36, 110, 93, 0.11));
+}
+
+/* The old cat/wizard decoration slots stay harmless and invisible. */
+.hero-decoration {
+  display: none;
+}
+
+/* ---------- Tools section ---------- */
+
+.tools-section {
+  width: min(1250px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 52px 0 76px;
+}
+
+.section-title {
+  margin: 0 0 30px;
+  text-align: center;
+  color: var(--ink);
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 5px;
+  margin: 17px auto 0;
+  background: var(--mint-500);
+  box-shadow:
+    6px 0 0 var(--mint-300),
+    -6px 0 0 var(--mint-300);
+}
+
+/* ---------- Tool grid ---------- */
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* ---------- Tool cards ---------- */
+
+.tool-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  padding: 24px 22px 21px;
+
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fffc 100%);
+
+  border: 3px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow:
+    0 5px 0 rgba(72, 173, 145, 0.10),
+    0 10px 22px var(--shadow);
+
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--mint-500);
+  box-shadow:
+    0 8px 0 rgba(72, 173, 145, 0.12),
+    0 16px 28px var(--shadow-strong);
+}
+
+.tool-card h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: "Press Start 2P", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tool-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.tool-card .tool-icon,
+.tool-card img {
+  image-rendering: pixelated;
+}
+
+/* ---------- Active / featured card ---------- */
+
+.tool-card.active,
+.tool-card.featured {
+  border-color: var(--mint-500);
+  box-shadow:
+    0 6px 0 rgba(72, 173, 145, 0.18),
+    0 13px 25px var(--shadow-strong);
+}
+
+.tool-card.active::before,
+.tool-card.featured::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 18px;
+  right: 18px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 0 0 3px 3px;
+}
+
+/* ---------- Buttons / tool links ---------- */
+
+.tool-card a,
+.tool-card button,
+.tool-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 10px 16px;
+
+  background: var(--mint-500);
+  color: var(--white);
+  border: 3px solid var(--mint-700);
+  border-radius: 8px;
+
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  text-decoration: none;
+  text-align: center;
+
+  box-shadow: 0 4px 0 var(--mint-700);
+  cursor: pointer;
+
+  transition:
+    transform 100ms ease,
+    background 100ms ease,
+    box-shadow 100ms ease;
+}
+
+.tool-card a:hover,
+.tool-card button:hover,
+.tool-button:hover {
+  background: var(--mint-600);
+}
+
+.tool-card a:active,
+.tool-card button:active,
+.tool-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--mint-700);
+}
+
+/* ---------- About ---------- */
+
+.about {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto 72px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.76);
+  border: 3px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px var(--shadow);
+
+  text-align: center;
+}
+
+.about h2 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-family: "Press Start 2P", monospace;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.about p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 28px 20px 34px;
+  background: var(--ink);
+  color: #d8eee7;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer a {
+  color: #9de0ca;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Generic compatibility helpers ----------
+   Kept because the existing HTML/CSS may contain these
+   class names elsewhere in the page/tools.
+   ---------- */
+
+.top-bar,
+.top-logo,
+.top-tagline,
+nav {
+  /* Legacy selectors intentionally neutralized. */
+}
+
+.pixel {
+  image-rendering: pixelated;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1050px) {
+  .tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero,
+  .hero-content {
+    min-height: 330px;
+  }
+
+  .main-logo {
+    max-height: 290px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero,
+  .hero-content {
+    min-height: 255px;
+  }
+
+  .hero-content {
+    padding: 18px 14px 24px;
+  }
+
+  .main-logo {
+    width: 96vw;
+    max-height: 225px;
+  }
+
+  .tools-section {
+    width: min(100% - 24px, 1250px);
+    padding: 38px 0 56px;
+  }
+
+  .tool-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .tool-card {
+    min-height: 195px;
+    padding: 21px 18px 19px;
+  }
+
+  .section-title {
+    font-size: 15px;
+  }
+
+  .about {
+    width: calc(100% - 24px);
+    margin-bottom: 48px;
+    padding: 24px 18px;
+  }
+
+  .about h2 {
+    font-size: 14px;
+  }
+}
