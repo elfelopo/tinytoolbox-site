@@ -1,46 +1,220 @@
+/* TinyToolbox — Flipbook Maker theme */
+
+:root {
+    --bg: #171d38;
+    --bg-light: #222a4a;
+    --mint: #48ad91;
+    --mint-light: #72c7ae;
+    --mint-dark: #2f8e76;
+    --cream: #fffaf0;
+    --text: #f7f4eb;
+    --text-dark: #26342f;
+    --border: #a9dfcf;
+    --shadow: rgba(0, 0, 0, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+    font-family: "Nunito", Arial, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 50% -10%, #30385d 0%, var(--bg) 48%, #12172d 100%);
+}
+
+/* TinyToolbox-style header */
+body::before {
+    content: "TINYTOOLBOX";
+    display: block;
+    padding: 22px 24px 20px;
+    color: var(--cream);
+    background: var(--bg-light);
+    border-bottom: 5px solid var(--mint-dark);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.18);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(14px, 2vw, 20px);
+    text-align: center;
+    letter-spacing: 0.04em;
 }
 
 .workspace {
+    width: min(1250px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 38px 0 60px;
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 40px;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 28px;
     align-items: start;
 }
 
 .controls {
     min-width: 0;
+    padding: 24px;
+    color: var(--text-dark);
+    background: linear-gradient(180deg, #ffffff 0%, var(--cream) 100%);
+    border: 4px solid var(--mint);
+    border-radius: 12px;
+    box-shadow:
+        0 5px 0 rgba(72, 173, 145, 0.18),
+        0 12px 28px var(--shadow);
+}
+
+.controls h1,
+.controls h2,
+.controls h3 {
+    margin-top: 0;
+    color: var(--text-dark);
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.6;
 }
 
 .preview-area {
     max-width: 100%;
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 150px);
     overflow: auto;
+    padding: 22px;
+    background: rgba(34, 42, 74, 0.78);
+    border: 4px solid var(--mint-dark);
+    border-radius: 12px;
+    box-shadow:
+        0 5px 0 rgba(0, 0, 0, 0.18),
+        0 12px 28px var(--shadow);
 }
 
-canvas {
+.preview-area canvas {
+    display: block;
     max-width: 100%;
-    border: 1px solid black;
+    height: auto;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 4px solid var(--cream);
+    border-radius: 4px;
     image-rendering: pixelated;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.25);
 }
 
 button {
     padding: 10px 16px;
+    color: #ffffff;
+    background: var(--mint);
+    border: 3px solid var(--mint-dark);
+    border-radius: 8px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    line-height: 1.5;
     cursor: pointer;
+    box-shadow: 0 4px 0 var(--mint-dark);
+    transition: transform 100ms ease, background 100ms ease, box-shadow 100ms ease;
 }
 
-input {
-    padding: 5px;
+button:hover {
+    background: var(--mint-dark);
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 var(--mint-dark);
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+    padding: 8px 10px;
+    color: var(--text-dark);
+    background: #ffffff;
+    border: 2px solid #b9ded1;
+    border-radius: 6px;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--mint);
+    box-shadow: 0 0 0 3px rgba(72, 173, 145, 0.16);
+}
+
+label {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.55;
+}
+
+.preview-area::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.preview-area::-webkit-scrollbar-track {
+    background: #151a30;
+    border-radius: 6px;
+}
+
+.preview-area::-webkit-scrollbar-thumb {
+    background: var(--mint-dark);
+    border: 3px solid #151a30;
+    border-radius: 6px;
+}
+
+.preview-area::-webkit-scrollbar-thumb:hover {
+    background: var(--mint);
 }
 
 @media (max-width: 800px) {
     .workspace {
+        width: min(100% - 24px, 1250px);
         grid-template-columns: 1fr;
+        gap: 18px;
+        padding-top: 24px;
+    }
+
+    .controls {
+        padding: 20px;
     }
 
     .preview-area {
         max-height: none;
+        padding: 14px;
+    }
+
+    body::before {
+        padding: 18px 14px;
+        font-size: 13px;
     }
 }
+
+@media (max-width: 480px) {
+    .workspace {
+        width: calc(100% - 16px);
+    }
+
+    .controls {
+        padding: 16px;
+        border-width: 3px;
+    }
+
+    .preview-area {
+        padding: 10px;
+        border-width: 3px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
