@@ -152,13 +152,19 @@ nav a:hover {
 
 
 .main-logo {
-    display: block;
-    width: min(900px, 94vw);
-    max-height: 380px;
-    height: auto;
+
+    width: min(760px, 90vw);
+
+    max-height: 320px;
+
     object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto;
+
     image-rendering: pixelated;
-    filter: drop-shadow(0 10px 0 rgba(0, 0, 0, 0.12));
+
 }
 
 
